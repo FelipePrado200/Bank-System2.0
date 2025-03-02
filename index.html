@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Bancário</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="container">
+        <!-- Tela de Login -->
+        <div id="login-screen" class="card login-card">
+            <h1>Login</h1>
+            <div class="form-group">
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" placeholder="Digite seu usuário">
+            </div>
+            <div class="form-group">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" placeholder="Digite sua senha">
+            </div>
+            <div class="buttons">
+                <button onclick="login()">Entrar</button>
+                <button onclick="criarUsuario()">Criar Usuário</button>
+            </div>
+        </div>
+
+        <!-- Tela Principal -->
+        <div id="main-screen" class="hidden">
+            <div class="header">
+                <h1>Bem-vindo, <span id="titular-nome"></span>!</h1>
+                <button onclick="logout()" class="logout-button">Logout</button>
+            </div>
+            <div class="card">
+                <div class="form-group">
+                    <label for="valor">Valor:</label>
+                    <input type="number" id="valor" placeholder="Digite o valor">
+                </div>
+                <div class="buttons">
+                    <button onclick="sacar()">Sacar</button>
+                    <button onclick="depositar()">Depositar</button>
+                    <button onclick="consultarSaldo()">Consultar Saldo</button>
+                    <button onclick="transferir()">Transferir</button>
+                </div>
+            </div>
+            <div id="resultado" class="resultado-card"></div>
+            <div class="card historico-card">
+                <h2>Histórico de Transações</h2>
+                <ul id="historico"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
